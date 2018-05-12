@@ -7,6 +7,7 @@
 <title>注册</title>
 </head>
 <body>
-
+register
+!!!!
 </body>
 </html>
