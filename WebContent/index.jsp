@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</span>
 					</h2>
 					<a href="home?action=query" class="btn btn-default">show Course</a>
-					<a href="home?action=adminquery" class="btn btn-default">show Admins</a>
+					<a href="admin?action=adminquery" class="btn btn-default">show Admins</a>
 					<a href="adminlogin.jsp" class="btn btn-default">登录</a>
 					<a href="register.jsp" class="btn btn-default">注册</a>
 				</div>

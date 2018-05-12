@@ -14,7 +14,7 @@ import com.jackie.bean.Admin;
 import com.jackie.service.AdminService;
 import com.jackie.service.impl.AdminServiceImpl;
 
-@WebServlet("/home")
+@WebServlet("/admin")
 public class AdminServlet extends HttpServlet {
 	private AdminService adminService;
 	private static final long serialVersionUID = 1L;
@@ -31,8 +31,8 @@ public class AdminServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String action=request.getParameter("adminquery");
-		if (action.equals("adm.getId()")) {
+		String action=request.getParameter("action");
+		if (action.equals("adminquery")) {
 			List<Admin> admins=adminService.findAdmins();
 			HttpSession session=request.getSession();
 			session.setAttribute("adminlist", admins);
