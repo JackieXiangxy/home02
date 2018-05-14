@@ -12,19 +12,16 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public int addAdmin(Admin admin) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int delAdmin(int id) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int updateAdmin(Admin admin) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -44,9 +41,9 @@ public class AdminServiceImpl implements AdminService {
 	 * @param admin Admin对象
 	 */
 	@Override
-	public int login(Admin admin) {
+	public Admin login(Admin admin) {
 		
-		return 0;
+		return adminDao.login(admin);
 	}
 
 }

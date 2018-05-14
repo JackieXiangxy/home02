@@ -70,4 +70,25 @@ public class AdminDAOImpl implements AdminDAO {
 		return ad;
 	}
 
+	/**
+	 * 登录
+	 * @param admin对象
+	 */
+	@Override
+	public Admin login(Admin admin) {
+		dbc=new DBCon();
+		Admin ad=null;;
+		String sql="select * from admin where usernama=?,password=?";
+		ResultSet result=dbc.doQuery(sql, new Object[] {admin.getUsername(),admin.getPass()});
+		try {
+			while(result.next()) {
+				ad=new Admin();
+				ad.setUsername(result.getString("username"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return ad;
+	}
+
 }

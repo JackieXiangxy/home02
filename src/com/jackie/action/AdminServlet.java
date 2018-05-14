@@ -41,7 +41,16 @@ public class AdminServlet extends HttpServlet {
 			String username=request.getParameter("username");
 			String password=request.getParameter("password");
 			Admin admin=new Admin(username,password);
-			int res=adminService.login(admin);
+			Admin u=adminService.login(admin);
+			HttpSession session=request.getSession();
+			if (u==null) {
+				session.setAttribute("errMsg", "用户名或密码错误");
+				request.getRequestDispatcher("adminlogin.jsp").forward(request, response);
+			}else {
+				session.setAttribute("admin", u);
+				request.getRequestDispatcher("admin/adminIndex.jsp").forward(request, response);
+			}
+			
 			
 			
 		}
