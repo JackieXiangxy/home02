@@ -42,7 +42,7 @@ public class AdminDAOImpl implements AdminDAO {
 				Admin admin=new Admin();
 				admin.setId(res.getInt("id"));
 				admin.setUsername(res.getString("username"));
-				admin.setPass(res.getString("pass"));
+				admin.setPass(res.getString("password"));
 				admins.add(admin);
 			}
 		} catch (SQLException e) {
