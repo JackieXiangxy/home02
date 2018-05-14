@@ -23,6 +23,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="view/css/animate.css"> 
     <link rel="stylesheet" href="view/css/prettyPhoto.css"> 
     <link rel="stylesheet" href="view/css/style.css"> 
+     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
 </head>
 <body>
 <h1 >简单成绩管理系统</h1>

@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<ul class="socail-link list-inline">
-						<li><a href="https://www.qq.com"><i class="fa fa-qq"></i></a></li>
+						<li><a href="http://www.qq.com/"><i class="fa fa-qq"></i></a></li>
 						<!-- 
 						<li><a href="#"><i class="fa fa-facebook"></i></a></li> 
 						<li><a href="#"><i class="fa fa-google-plus"></i></a></li> 
@@ -24,5 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</footer>
+	    <script  src="../bootstrap/js/bootstrap.js"></script>
+		<script  src="../bootstrap/js/jquery-2.1.1.js"></script>
 </body>
 </html>
