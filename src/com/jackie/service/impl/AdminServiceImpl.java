@@ -36,8 +36,17 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public Admin findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return adminDao.findById(id);
+	}
+
+	/**
+	 * 管理员登录
+	 * @param admin Admin对象
+	 */
+	@Override
+	public int login(Admin admin) {
+		
+		return 0;
 	}
 
 }

@@ -27,20 +27,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="collapse navbar-collapse navigation"
 					id="bs-example-navbar-collapse-1" role="navigation">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#section-banner">Home </a></li>
-						<li><a href="#section-profile">About me </a></li>
-						<li><a href="#section-skill">Skills </a></li>
-						<li><a href="#section-resume">Resume </a></li>
+						<li class="active"><a href="#section-banner">首页 </a></li>
+						<li><a href="#section-profile">关于我们 </a></li>
+						<li><a href="#section-skill">技能 </a></li>
+						<li><a href="#section-resume">冲阿里</a></li>
 						<li><a href="#section-testimonial">Testimonials </a></li>
 						<li><a href="#section-portfolio">Portfolio </a></li>
 						<li><a href="#section-contact">Contact me </a></li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
-					<li><a href="Login.jsp" target="_blank">登录</a>
-					</li>
-					<li><a href="Register.jsp" target="_blank">注册</a>
-					</li>
-				</ul>
+					
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>
@@ -59,8 +54,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</h2>
 					<a href="home?action=query" class="btn btn-default">show Course</a>
 					<a href="admin?action=adminquery" class="btn btn-default">show Admins</a>
-					<a href="adminlogin.jsp" class="btn btn-default">登录</a>
-					<a href="register.jsp" class="btn btn-default">注册</a>
+					<a href="adminlogin.jsp" class="btn btn-default">login</a>
+					<a href="register.jsp" class="btn btn-default">register</a>
 				</div>
 			</div>
 		</div>

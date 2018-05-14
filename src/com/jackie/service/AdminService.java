@@ -10,5 +10,6 @@ public interface AdminService {
 	public int  updateAdmin(Admin admin);
 	public List<Admin> findAdmins();
 	public Admin findById(int id);
+	public int login(Admin admin);
 
 }

@@ -53,7 +53,21 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public Admin findById(int id) {
-		return null;
+		Admin ad=null;
+		String sql="select * from admin where id=?";
+		dbc=new DBCon();
+		ResultSet res=dbc.doQuery(sql, new Object[] {id});
+		try {
+			while (res.next()) {
+				ad=new Admin();
+				ad.setId(res.getInt("id"));
+				ad.setUsername(res.getString("username"));
+				ad.setPass(res.getString("pass"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return ad;
 	}
 
 }
