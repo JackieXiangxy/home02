@@ -44,7 +44,7 @@ public class AdminServlet extends HttpServlet {
 			Admin u=adminService.login(admin);
 			HttpSession session=request.getSession();
 			if (u==null) {
-				session.setAttribute("errMsg", "用户名或密码错误");
+				session.setAttribute("errMsg", "用户名或密码错误,请检查后重新登录！！！");
 				request.getRequestDispatcher("adminlogin.jsp").forward(request, response);
 			}else {
 				session.setAttribute("admin", u);

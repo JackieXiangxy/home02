@@ -63,48 +63,61 @@
 
 
 <body id="login">
-
-    <div id="wrapper">
-        <div id="content">
-            <div id="header">
+	<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+	<%String errMsg=(String)request.getSession().getAttribute("errMsg"); %>
+	<div id="wrapper">
+		<div id="content">
+			<div id="header">
 				<img src="/view/images/logo.png" alt="EOVA">
-            </div>
-            <!--  
+			</div>
+			<!--  
             <div id="darkbanner" class="banner320">
                 <h2 style='font-family: "Microsoft YaHei"'>运营支撑系统 ┇ USER LOGIN</h2>
             </div>
             -->
-            <div id="darkbannerwrap">
-            </div>
-            <form id="loginForm" method="post" action="admin?action=adminlogin">
-            	<fieldset class="form">
+			<% if (null != errMsg) { %>
+			<%-- 登录验证失败提示 --%>
+			<div class="container">
+				<div class="alert alert-error">
+					<%=errMsg %>
+				</div>
+			</div>
+			<%    request.getSession().removeAttribute("msg");
+    } %>
+			<div id="darkbannerwrap"></div>
+			<form id="loginForm" method="post" action="admin?action=adminlogin">
+				<fieldset class="form">
 					<p>
 						<label class="loginlabel" for="user_name"> 帐号:</label> <input
 							class="logininput ui-keyboard-input ui-widget-content ui-corner-all"
-							name="username" id="user_name" type="text"
-							value="username" />
+							name="username" id="user_name" type="text"    />
 					</p>
 					<p>
 						<label class="loginlabel" for="user_password"> 密码:</label> <span>
-							<input class="logininput ui-keyboard-input ui-widget-content ui-corner-all" 
-							name="password"
-							value="password" id="user_password" type="password" />
+							<input
+							class="logininput ui-keyboard-input ui-widget-content ui-corner-all"
+							name="password"  id="user_password"
+							type="password" />
 						</span>
 					</p>
 					<div id="loginbtn">
-					<button id="loginbtn" type="button" class="positive" name="Submit">
-                    		登录</button>
+						<button id="loginbtn" type="button" class="positive" name="Submit">
+							登录</button>
 					</div>
 					<div>
-					<button id="loginbtn" type="button" class="positive" name="Submit">
-                    <img src="/ui/login/key.png" />快速登录</button>
-				</div>
-            </fieldset>
-            </form>
-        </div>
-    </div>
+						<button id="loginbtn" type="button" class="positive" name="Submit">
+							<img src="/ui/login/key.png" />快速登录
+						</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
 
-    <script type="text/javascript">
+	<script type="text/javascript">
         $(document).ready(function() {
             $(".logininput").blur(function() {
                 if ($(this).val() == "") {

@@ -76,14 +76,14 @@ public class AdminDAOImpl implements AdminDAO {
 	 */
 	@Override
 	public Admin login(Admin admin) {
+		Admin ad=null;
 		dbc=new DBCon();
-		Admin ad=null;;
-		String sql="select * from admin where usernama=?,password=?";
-		ResultSet result=dbc.doQuery(sql, new Object[] {admin.getUsername(),admin.getPass()});
+		String sql="select *from admin where username=? && password=?";
+		ResultSet res=dbc.doQuery(sql, new Object[] {admin.getUsername(),admin.getPass()});
 		try {
-			while(result.next()) {
+			while (res.next()) {
 				ad=new Admin();
-				ad.setUsername(result.getString("username"));
+				ad.setUsername(res.getString("username"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
