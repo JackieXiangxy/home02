@@ -93,14 +93,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p>
 						<label class="loginlabel" for="user_name"> 帐号:</label> <input
 							class="logininput ui-keyboard-input ui-widget-content ui-corner-all"
-							name="username" id="user_name" type="text"    />
+							name="username" id="user_name" type="text" />
 					</p>
 					<p>
 						<label class="loginlabel" for="user_password"> 密码:</label> <span>
 							<input
 							class="logininput ui-keyboard-input ui-widget-content ui-corner-all"
-							name="password"  id="user_password"
-							type="password" />
+							name="password" id="user_password" type="password" />
 						</span>
 					</p>
 					<div id="loginbtn">
