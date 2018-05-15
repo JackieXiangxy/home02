@@ -10,13 +10,13 @@ import com.jackie.dao.AdminDAO;
 import com.jackie.util.DBCon;
 
 public class AdminDAOImpl implements AdminDAO {
-	private DBCon dbc=null;
+	private DBCon dbc = null;
 
 	@Override
 	public int addAdmin(Admin admin) {
-		dbc =new DBCon();
-		String sql="insert into admin value(?,?)";
-		int res=dbc.doUpdate(sql, new Object[] {admin.getUsername(),admin.getPass()});
+		dbc = new DBCon();
+		String sql = "insert into admin value(?,?)";
+		int res = dbc.doUpdate(sql, new Object[] { admin.getUsername(), admin.getPass() });
 		dbc.close();
 		return res;
 	}
@@ -34,12 +34,12 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public List<Admin> findAdmins() {
 		List<Admin> admins = new ArrayList<>();
-		String sql="select * from admin ";
-		dbc=new DBCon();
-		ResultSet res=dbc.doQuery(sql, new Object[] {});
+		String sql = "select * from admin ";
+		dbc = new DBCon();
+		ResultSet res = dbc.doQuery(sql, new Object[] {});
 		try {
 			while (res.next()) {
-				Admin admin=new Admin();
+				Admin admin = new Admin();
 				admin.setId(res.getInt("id"));
 				admin.setUsername(res.getString("username"));
 				admin.setPass(res.getString("password"));
@@ -53,13 +53,13 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public Admin findById(int id) {
-		Admin ad=null;
-		String sql="select * from admin where id=?";
-		dbc=new DBCon();
-		ResultSet res=dbc.doQuery(sql, new Object[] {id});
+		Admin ad = null;
+		String sql = "select * from admin where id=?";
+		dbc = new DBCon();
+		ResultSet res = dbc.doQuery(sql, new Object[] { id });
 		try {
 			while (res.next()) {
-				ad=new Admin();
+				ad = new Admin();
 				ad.setId(res.getInt("id"));
 				ad.setUsername(res.getString("username"));
 				ad.setPass(res.getString("pass"));
@@ -72,17 +72,18 @@ public class AdminDAOImpl implements AdminDAO {
 
 	/**
 	 * 登录
+	 * 
 	 * @param admin对象
 	 */
 	@Override
 	public Admin login(Admin admin) {
-		Admin ad=null;
-		dbc=new DBCon();
-		String sql="select *from admin where username=? && password=?";
-		ResultSet res=dbc.doQuery(sql, new Object[] {admin.getUsername(),admin.getPass()});
+		Admin ad = null;
+		dbc = new DBCon();
+		String sql = "select *from admin where username=? && password=?";
+		ResultSet res = dbc.doQuery(sql, new Object[] { admin.getUsername(), admin.getPass() });
 		try {
 			while (res.next()) {
-				ad=new Admin();
+				ad = new Admin();
 				ad.setUsername(res.getString("username"));
 			}
 		} catch (SQLException e) {

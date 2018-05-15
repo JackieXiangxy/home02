@@ -34,10 +34,10 @@ public class CourseServlet extends HttpServlet {
 		req.setCharacterEncoding("utf-8");
 		String action = req.getParameter("action");
 		if (action.equals("query")) {
-			List<Course> clist = sCourse.findAllCourse();//建立对象及查找所有对象
-			HttpSession session = req.getSession();//获取前台的session值
-			session.setAttribute("clist", clist);//向前端传出处理后的值
-			req.getRequestDispatcher("courseList.jsp").forward(req, resp);//设定接收结果的页面 
+			List<Course> clist = sCourse.findAllCourse();// 建立对象及查找所有对象
+			HttpSession session = req.getSession();// 获取前台的session值
+			session.setAttribute("clist", clist);// 向前端传出处理后的值
+			req.getRequestDispatcher("courseList.jsp").forward(req, resp);// 设定接收结果的页面
 
 		} else if (action.equals("del")) {
 			String cno = req.getParameter("cno");
@@ -50,27 +50,27 @@ public class CourseServlet extends HttpServlet {
 				out.close();
 
 			}
-		} else if (action.equals("edit")){
-			String cno=req.getParameter("cno");
-			Course css=sCourse.findById(cno);
-			HttpSession session=req.getSession();
+		} else if (action.equals("edit")) {
+			String cno = req.getParameter("cno");
+			Course css = sCourse.findById(cno);
+			HttpSession session = req.getSession();
 			session.setAttribute("cservice", css);
 			req.getRequestDispatcher("edit.jsp").forward(req, resp);
-			
-		}else if (action.equals("update")) {
-			String cno=req.getParameter("cno");
-			String cname=new String(req.getParameter("cname"));
-			String tno=new String(req.getParameter("tno"));
-			Course cou=new Course(cno,cname,tno);
-			int res=sCourse.updateCourse(cou);
-			if (res>0) {
+
+		} else if (action.equals("update")) {
+			String cno = req.getParameter("cno");
+			String cname = new String(req.getParameter("cname"));
+			String tno = new String(req.getParameter("tno"));
+			Course cou = new Course(cno, cname, tno);
+			int res = sCourse.updateCourse(cou);
+			if (res > 0) {
 				req.getRequestDispatcher("home?action=query").forward(req, resp);
-			}else {
-				PrintWriter out=resp.getWriter();
+			} else {
+				PrintWriter out = resp.getWriter();
 				out.print("update fail");
 				out.close();
 			}
-			
+
 		}
 	}
 }

@@ -12,7 +12,7 @@ public class Admin {
 		this.username = username;
 		this.pass = pass;
 	}
-	
+
 	public Admin(int id, String username, String pass) {
 		this.id = id;
 		this.username = username;

@@ -8,7 +8,7 @@ import com.jackie.dao.impl.AdminDAOImpl;
 import com.jackie.service.AdminService;
 
 public class AdminServiceImpl implements AdminService {
-	private AdminDAO adminDao=new AdminDAOImpl();
+	private AdminDAO adminDao = new AdminDAOImpl();
 
 	@Override
 	public int addAdmin(Admin admin) {
@@ -27,7 +27,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public List<Admin> findAdmins() {
-		
+
 		return adminDao.findAdmins();
 	}
 
@@ -38,11 +38,13 @@ public class AdminServiceImpl implements AdminService {
 
 	/**
 	 * 管理员登录
-	 * @param admin Admin对象
+	 * 
+	 * @param admin
+	 *            Admin对象
 	 */
 	@Override
 	public Admin login(Admin admin) {
-		
+
 		return adminDao.login(admin);
 	}
 

@@ -46,7 +46,7 @@ public class CourseDAOImpl implements CourseDAO {
 		String sql = "select * from course ";
 		try {
 			dbc = new DBCon();
-		 // ResultSet res = dbc.doQuery(sql, new Object[] {});
+			// ResultSet res = dbc.doQuery(sql, new Object[] {});
 			ResultSet res = dbc.doQuery(sql, new Object[] {});
 			while (res.next()) {
 				Course course = new Course();
