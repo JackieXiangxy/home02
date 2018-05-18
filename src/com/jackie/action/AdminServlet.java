@@ -38,7 +38,8 @@ public class AdminServlet extends HttpServlet {
 			List<Admin> admins = adminService.findAdmins();
 			HttpSession session = request.getSession();
 			session.setAttribute("adminlist", admins);
-			request.getRequestDispatcher("admin/adminList.jsp").forward(request, response);
+			response.sendRedirect("admin/adminList.jsp");
+//			request.getRequestDispatcher("admin/adminList.jsp").forward(request, response);
 		} else if (action.equals("adminlogin")) {
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
